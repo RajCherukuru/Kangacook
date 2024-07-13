@@ -9,25 +9,19 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="bg-red-300 h-[100vh] w-[100vw]">
+    <div className="bg-red-300 h-[100vh] w-[100vw] overflow-auto">
 
+        <div className='w-[1100px] mx-auto flex flex-col gap-20'>
 
-        <Navbar/>
+            <Navbar/>
 
-        <Routes>
-          <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/contact' element={<Contact></Contact>}></Route>
+              <Routes>
+                <Route path='/' element={<Home></Home>}></Route>
+                <Route path='/contact' element={<Contact></Contact>}></Route>
 
-        </Routes>
+              </Routes>
 
-
-
-
-
-
-
-
-
+        </div>
 
     </div>
   );

@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 export const Navbar= ()=>{
     return(
-        <div className=' flex flex-row justify-around p-5'>
+        <div className=' flex flex-row justify-between p-5'>
 
               <img className='' width={350} height={100} src='https://kangacook.com/assets/kangacook_logo_en-C6XaWo8m.svg' ></img>
 
