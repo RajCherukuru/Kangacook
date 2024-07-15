@@ -14,7 +14,7 @@ export const Contact= ()=>{
 
     const onSubmit= async (data)=>{
         try {
-            const response = await axios.post("https://asufaculty.space/api/store/", data);
+            const response = await axios.post("example.com", data);
             console.log('Data successfully sent:', response.data);
             reset();
         } catch (error) {
