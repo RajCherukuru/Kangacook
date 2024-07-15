@@ -1,21 +1,27 @@
+import axios from "axios";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+
 
 
 export const Contact= ()=>{
 
-    const [message, setMessage]= useState();
 
     const {register, handleSubmit, reset}= useForm();
 
-    console.log(message)
+    
 
-
-    const onSubmit= (data)=>{
-        console.log(data)
-        reset();
+    const onSubmit= async (data)=>{
+        try {
+            const response = await axios.post("https://asufaculty.space/api/store/", data);
+            console.log('Data successfully sent:', response.data);
+            reset();
+        } catch (error) {
+            console.error('Error sending data:', error);
+        }
     }
+    
 
     return(
         <div className="w-2/3 mx-auto flex flex-col gap-9">
@@ -30,7 +36,8 @@ export const Contact= ()=>{
             </motion.div>
         </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col gap-5 items-center justify-center">
+            <form onSubmit={handleSubmit(onSubmit)} method="POST"  className=" flex flex-col gap-5 items-center justify-center">
+            
 
                 <div className="flex flex-col gap-5 ">
 
